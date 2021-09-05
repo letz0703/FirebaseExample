@@ -29,8 +29,8 @@ public class SignUp extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        mail = findViewById(R.id.etEmail);
-        password = findViewById(R.id.etPassword);
+        mail = findViewById(R.id.etSignUpEmail);
+        password = findViewById(R.id.etSignUpPassword);
         enter = findViewById(R.id.btSignUp);
 
         enter.setOnClickListener(new View.OnClickListener()
