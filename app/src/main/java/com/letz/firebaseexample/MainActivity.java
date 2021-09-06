@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity
     Button signIn;
     Button signUp;
     Button forgotPassword;
+    Button phoneSignIn;
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity
         signIn = findViewById(R.id.btnSignIn);
         signUp = findViewById(R.id.btnSignUp);
         forgotPassword = findViewById(R.id.btnForgot);
+        phoneSignIn = findViewById(R.id.btnPhoneSignIn);
 
 
         signIn.setOnClickListener(new View.OnClickListener()
@@ -74,6 +76,14 @@ public class MainActivity extends AppCompatActivity
                 
 
             }
+        });
+
+        phoneSignIn.setOnClickListener(v ->
+        {
+            Intent i = new Intent(MainActivity.this, phoneSignInActivity.class);
+            startActivity(i);
+
+
         });
     }
 

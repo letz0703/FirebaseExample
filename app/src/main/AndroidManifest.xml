@@ -10,6 +10,9 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.FirebaseExample">
         <activity
+                android:name=".phoneSignInActivity"
+                android:exported="true" />
+        <activity
                 android:name=".ForgetActivity"
                 android:exported="true" />
         <activity
