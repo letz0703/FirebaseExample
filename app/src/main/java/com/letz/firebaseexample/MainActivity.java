@@ -26,8 +26,9 @@ public class MainActivity extends AppCompatActivity
 {
     EditText mail;
     EditText password;
-    Button SignIn;
-    Button SignUp;
+    Button signIn;
+    Button signUp;
+    Button forgotPassword;
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -38,10 +39,12 @@ public class MainActivity extends AppCompatActivity
 
         mail = findViewById(R.id.etEmail);
         password = findViewById(R.id.etPassword);
-        SignIn = findViewById(R.id.btnSignIn);
-        SignUp = findViewById(R.id.btnSignUp);
+        signIn = findViewById(R.id.btnSignIn);
+        signUp = findViewById(R.id.btnSignUp);
+        forgotPassword = findViewById(R.id.btnForgot);
 
-        SignIn.setOnClickListener(new View.OnClickListener()
+
+        signIn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
@@ -51,12 +54,25 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        SignUp.setOnClickListener(new View.OnClickListener()
+        signUp.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
                 Intent iSignUp = new Intent(MainActivity.this, SignUp.class);
                 startActivity(iSignUp);
+            }
+        });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this,ForgetActivity.class);
+                startActivity(i);
+                finish();
+                
+
             }
         });
     }
