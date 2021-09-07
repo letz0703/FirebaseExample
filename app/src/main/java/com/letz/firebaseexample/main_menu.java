@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
 public class main_menu extends AppCompatActivity
 {
@@ -34,6 +35,8 @@ public class main_menu extends AppCompatActivity
         upload = findViewById(R.id.buttonUploadProfilePicture);
 
         profilePic.setOnClickListener(v -> {
+
+            fileChooser();
 
         });
 
@@ -67,6 +70,7 @@ public class main_menu extends AppCompatActivity
                     if (result.getResultCode() == RESULT_OK) {
                         Intent data = result.getData();
                         imageUri = data.getData();
+                        Picasso.get().load(imageUri).into(profilePic);
                     }
                 }
             }
